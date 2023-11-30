@@ -1,0 +1,6 @@
+pin setup
+s3 to d2
+s2 to d4
+out to d5
+s1 to d14
+s0 to d19
