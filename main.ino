@@ -13,6 +13,7 @@ const int LCD_ROWS = 2;
 #define S3 2
 #define sensorOut 5
 int frequency = 0;
+int red, green, blue = 0;
 int lastState = HIGH; // the previous state from the input pin
 int currentState;     // the current reading from the input pin
 
@@ -52,6 +53,7 @@ frequency = pulseIn(sensorOut, LOW);
 Serial.print("R= ");//printing name
 Serial.print(frequency);//printing RED color frequency
 Serial.print(" ");
+red = frequency;
 delay(100);
 // Setting Green filtered photodiodes to be read
 digitalWrite(S2,HIGH);
@@ -62,6 +64,7 @@ frequency = pulseIn(sensorOut, LOW);
 Serial.print("G= ");//printing name
 Serial.print(frequency);//printing RED color frequency
 Serial.print(" ");
+green = frequency;
 delay(100);
 // Setting Blue filtered photodiodes to be read
 digitalWrite(S2,LOW);
@@ -72,6 +75,7 @@ frequency = pulseIn(sensorOut, LOW);
 Serial.print("B= ");//printing name
 Serial.print(frequency);//printing RED color frequency
 Serial.println(" ");
+blue = frequency;
 delay(100);
 }
 
@@ -82,9 +86,9 @@ void updateLCD()
     if(digitalRead(15) == 1) {
       lcd.clear();
       lcd.setCursor(0,0);
-      lcd.print("NO SENSOR");
+      lcd.print("RGB =" + red + " " + green + " " + blue);
       lcd.setCursor(0,1);
-      lcd.print("DETECTED!!!");
+      lcd.print("");
       Serial.println(digitalRead(15));
       
   } else {
