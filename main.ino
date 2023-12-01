@@ -86,9 +86,17 @@ void updateLCD()
     if(digitalRead(15) == 1) {
       lcd.clear();
       lcd.setCursor(0,0);
-      lcd.print("RGB =" + red + " " + green + " " + blue);
+      lcd.print("RED");
+      lcd.setCursor(4, 0);
+      lcd.print("GREEN");
+      lcd.setCursor(10, 0);
+      lcd.print("BLUE");
       lcd.setCursor(0,1);
-      lcd.print("");
+      lcd.print(red);
+      lcd.setCursor(4, 1);
+      lcd.print(green);
+      lcd.setCursor(10, 1);
+      lcd.print(blue);
       Serial.println(digitalRead(15));
       
   } else {
