@@ -1,0 +1,80 @@
+  // List of known materials and their RGB values
+/* 
+
+Material materials[] = {
+  // Household items
+  {"Wood", 181, 101, 29}, // Light Brown
+  {"Plastic", 255, 255, 255}, // White
+  {"Glass", 248, 248, 255},
+  {"Concrete", 175, 175, 175},
+  {"Brick", 178, 34, 34},
+  {"Rubber", 50, 50, 50}, // Black
+  {"Coal", 45, 45, 45},
+
+  // Existing materials
+  {"Silicon", 220, 220, 207},
+  {"Chromium", 198, 200, 201},
+  {"Iron", 143, 145, 147},
+  {"Tin", 145, 145, 145},
+  {"Aluminum", 160, 162, 162},
+  {"Copper", 184, 115, 51},
+  {"Gold", 255, 215, 0},
+  {"Silver", 192, 192, 192},
+  {"Lead", 105, 105, 105},
+  {"Mercury", 234, 234, 234},
+  {"Platinum", 229, 228, 226},
+  {"Zinc", 154, 166, 175},
+  {"Nickel", 180, 180, 180},
+  {"Titanium", 191, 194, 197},
+  {"Cobalt", 61, 89, 171},
+  {"Magnesium", 179, 178, 176},
+  {"Potassium", 143, 133, 112},
+  {"Sodium", 250, 181, 86},
+  {"Carbon", 35, 35, 35},
+  {"Sulphur", 255, 255, 0},
+  {"Bronze", 205, 127, 50},
+  {"Brass", 181, 166, 66},
+  {"Uranium", 189, 183, 107},
+  {"Bismuth", 202, 179, 213},
+  {"Palladium", 207, 207, 196},
+
+  // New materials added earlier
+  {"Lithium", 203, 65, 84},
+  {"Calcium", 240, 240, 220},
+  {"Boron", 230, 230, 230},
+  {"Arsenic", 169, 169, 169},
+  {"Tungsten", 196, 196, 196},
+  {"Rhodium", 183, 183, 183},
+  {"Molybdenum", 170, 169, 165},
+  {"Vanadium", 132, 142, 156},
+  {"Rhenium", 105, 105, 105},
+  {"Osmium", 173, 177, 180},
+  {"Iridium", 226, 226, 226},
+  {"Tantalum", 195, 195, 195},
+  {"Hafnium", 200, 208, 218},
+  {"Yttrium", 182, 182, 182},
+  {"Neodymium", 255, 255, 255},
+  {"Thallium", 204, 204, 204},
+  {"Gallium", 170, 170, 170},
+  {"Thorium", 234, 234, 234},
+  {"Teflon", 255, 255, 255},  // Non-metal polymer
+  {"Graphite", 87, 87, 87},   // Allotropic form of Carbon
+  {"Quartz", 234, 234, 234},  // SiO2
+  {"Limestone", 211, 211, 211}, // CaCO3
+  {"Marble", 245, 245, 245},  // CaCO3
+  {"Diamond", 255, 255, 255}, // Pure carbon
+  {"Charcoal", 54, 54, 54},
+  {"Silica", 220, 220, 220},  // SiO2
+  {"Gypsum", 230, 230, 230},  // CaSO4
+  {"Pyrite", 187, 208, 0},    // FeS2 (Fool's Gold)
+  {"Alkali Salt", 255, 255, 255},  // NaCl
+  {"Mica", 199, 197, 187},    // silicate minerals
+  {"Clay", 158, 138, 114},
+  {"Granite", 186, 189, 182},
+  {"Basalt", 66, 66, 66},     // volcanic rock
+  {"Talc", 239, 236, 216},    // soft mineral
+  {"Bauxite", 165, 42, 42},   // aluminum ore
+  {"Corundum", 255, 0, 0},    // Al2O3 (Ruby)
+};
+
+*/
