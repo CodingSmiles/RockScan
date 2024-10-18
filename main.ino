@@ -41,26 +41,17 @@ Material materials[] = {
   {"Aluminum", 160, 162, 162},
   {"Iron", 143, 145, 147},
   {"Stainless Steel", 192, 192, 192},
-  {"Gold", 255, 215, 0},
+  {"Gold", 255, 215, 215},
   {"Silver", 192, 192, 192},
   {"Copper", 184, 115, 51},
-  {"Magnesium", 179, 178, 176},
-  {"Carbon", 87, 87, 87},
   {"Graphite", 87, 87, 87},
   {"Brick", 178, 34, 34},
   {"Concrete", 175, 175, 175},
   {"Granite", 186, 189, 182},
-  {"Glass", 248, 248, 255},
   {"Rubber", 50, 50, 50},
   {"Wood", 181, 101, 29},
   {"Charcoal", 54, 54, 54},
-  {"Coal", 45, 45, 45},
   {"Clay", 158, 138, 114},
-  {"Teflon", 255, 255, 254},
-  {"Lead", 105, 105, 105},
-  {"Zinc", 154, 166, 175},
-  {"Copper Wire", 184, 115, 51},
-  {"Tin", 145, 145, 145},
 };
 
 const char* getClosestMaterial(int r, int g, int b, int &purity) {
@@ -95,14 +86,17 @@ const char* getClosestMaterial(int r, int g, int b, int &purity) {
 
   int maxDistance = 255 * 255 * 3;
   float normalizedDistance = sqrt(minDistance) / sqrt(maxDistance);
-  purity = max(0, 100 - int(normalizedDistance * 100));
 
-  if (purity < 20) {
-    purity = 20;
+  // Increase the factor here to give lower average purity values
+  purity = max(0, 100 - int(normalizedDistance * 150));  // Adjusting factor from 100 to 150
+
+  if (purity < 10) {  // Ensuring minimum purity is lower, setting it to 10%
+    purity = 10;
   }
 
   return closestMaterial;
 }
+
 
 void setup() {
   pinMode(S0, OUTPUT);
@@ -193,3 +187,5 @@ int getPulseWidth(int s2, int s3) {
 int getRedPW() { return getPulseWidth(LOW, LOW); }
 int getGreenPW() { return getPulseWidth(HIGH, HIGH); }
 int getBluePW() { return getPulseWidth(LOW, HIGH); }
+
+
