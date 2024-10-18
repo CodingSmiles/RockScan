@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoScope</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #b6c8e8;
+            color: #fff;
+            border-radius: 8px 8px 8px 8px;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            color:black
+        }
+
+        section {
+            margin: 20px 0;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #4C638C;
+        }
+
+        section p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .highlight {
+            flex: 1;
+            min-width: 280px;
+            padding: 15px;
+            background-color: #e6edf7;
+            border-left: 5px solid #4C638C;
+            border-radius: 5px;
+        }
+
+        .highlight h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .highlight p {
+            color: #555;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #4C638C;
+            color: white;
+            font-size: 0.9em;
+            margin-top: 30px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        footer a {
+            color: #b6c8e8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>GeoScope</h1>
+            <p>By Aadiraj Anil, Ayushman Kalita, Mehul Saini</p>
+        </header>
+
+        <section>
+            <h2>Overview</h2>
+            <p>Wavelength detection plays a key role in identifying the composition and purity of materials. This project uses a sensor to measure wavelength values from objects and detect the closest material match, calculating the purity percentage. It's an innovative approach that showcases real-world applications of physics, technology, and electronics.</p>
+        </section>
+
+        <section class="highlights">
+            <div class="highlight">
+                <h3>Purpose</h3>
+                <p>This project helps identify different materials based on their reflective properties and wavelength data, allowing a closer look into purity estimation and material identification in a cost-effective and efficient manner.</p>
+            </div>
+            <div class="highlight">
+                <h3>Technology</h3>
+                <p>Using sensors that capture light reflection, we process the wavelengths detected and match them against known material properties. The core of the project involves an <b>HW067 16 diode wavelength sensor</b> and a set of calculations based on the difference in reflected wavelengths.</p>
+            </div>
+            <div class="highlight">
+                <h3>Future Scope</h3>
+                <p>The project has potential applications in industries like recycling, manufacturing, and material sciences where quick and accurate material identification is required.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Code Snippet</h2>
+            <p>Below is the core function for material detection and purity calculation. The wavelength values from the sensor are compared to predefined material data to find the closest match, with the purity calculated based on the closeness of the values.</p>
+            <pre><code class="language-cpp">
+for (int i = 0; i < sizeof(materials) / sizeof(materials[0]); i++) {
+        int rDiff = r - materials[i].rWavelength;
+        int gDiff = g - materials[i].gWavelength;
+        int bDiff = b - materials[i].bWavelength;
+        int distance = rDiff * rDiff + gDiff * gDiff + bDiff * bDiff;
+
+        int maxDistance = 255 * 255 * 3;
+        float normalizedDistance = sqrt(minDistance) / sqrt(maxDistance);
+        purity = max(0, 100 - int(normalizedDistance * 100));
+
+        return closestMaterial;
+        }
+}
+            </code></pre>
+        </section>
+
+        <footer>
+            <p>Created by Team Pragmatic Engineers | <a href="https://trajectory-aerospace.squarespace.com/">Learn More</a> | Mekathalon 2024</p>
+        </footer>
+    </div>
+
+</body>
+</html>
